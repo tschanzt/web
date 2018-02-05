@@ -25,6 +25,7 @@ odoo.define('web_ckeditor4', function(require){
     var core = require('web.core');
     var session = require('web.session');
     var formats = require('web.formats');
+    var FormView = require('web.FormView');
 
     var ckeditor_addFunction_org = CKEDITOR.tools.addFunction;
     //this is a quite complicated way to kind of monkey patch the private
