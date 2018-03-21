@@ -72,15 +72,17 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
       return $body;
     },
     /**
-     * Render the table head of our matrix. Looks for the first table head 
+     * Render the table hed of our matrix. Looks for the first table head 
      * and inserts the header into it.
      *
      * @private
      * @return {jQueryElement} The thead element that was inserted into.
      */
     _renderHeader: function () {
-      var $tr = $('<tr>').append('<th/>');
-      $tr= $tr.append(_.map(this.columns, this._renderHeaderCell.bind(this)));
+      var $tr = $('<tr>')
+          .append(_.map(this.columns, this._renderHeaderCell.bind(this)));
+      // wipe 1st column header
+      $tr.find('th:first').empty();
       if (this.matrix_data.show_row_totals) {
         $tr.append($('<th/>', {class: 'total'}));
       }
@@ -159,24 +161,6 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
         $tr.append(self._renderAggregateRowCell(row));
       }
       return $tr;
-    },
-    /**
-     * Renders the label for a specific row.
-     *
-     * @private
-     * @params {Object} record: Contains the information about the record.
-     * @params {jQueryElement} the cell that was rendered.
-     */
-    _renderLabelCell: function(record) {
-      var $td = $('<td>');
-      var value = record.data[this.matrix_data.field_y_axis];
-      if (value.type == 'record') {
-        // we have a related record
-        value = value.data.display_name;
-      }
-      // get 1st column filled w/ Y label
-      $td.text(value);
-      return $td;
     },
     /**
      * Create a cell and fill it with the aggregate value.
