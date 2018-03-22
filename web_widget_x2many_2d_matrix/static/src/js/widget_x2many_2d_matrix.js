@@ -29,7 +29,6 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
     init: function (parent, name, record, options) {
         this._super(parent, name, record, options);
         this.init_params();
-        debugger;
         return res;
     },
 
