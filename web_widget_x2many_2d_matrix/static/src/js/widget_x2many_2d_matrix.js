@@ -24,14 +24,17 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
      * @param {String} name: the name of the field.
      * @param {Object} record: Contains the information about the database records.
      * @param {Object} options: Contains the view options.
+     * @returns ????
      */
     init: function (parent, name, record, options) {
         this._super(parent, name, record, options);
         this.init_params();
+        debugger;
+        return res;
     },
 
     /**
-     * Initialize the widget specific parameters.
+     * Initalize the widget specific parameters.
      * Sets the axis and the values.
      */
     init_params: function () {
@@ -59,7 +62,7 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
     },
     /**
      * Initializes the Value matrix.
-     * Puts the values in the grid. If we have related items we use the display name.
+     * Puts the values in the grid. If we have releated items we use the display name.
      */
     init_matrix: function(){
       var self = this,
@@ -144,7 +147,7 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
     /**
      *Create the matrix renderer and add its output to our element
      *
-     * @returns {Deferred} A defered object to be completed when it finished rendering.
+     * @returns {Defered} A defered object to be completed when it finished rendering.
      */
     _render: function () {
       if (!this.view) {

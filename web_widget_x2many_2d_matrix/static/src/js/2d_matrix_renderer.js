@@ -367,14 +367,14 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
       });
     },
     /**
-     * Update the row total.
+     * Update the total row.
      */
     _refreshColTotals: function () {
       this._computeColumnAggregates();
       this.$('tfoot').replaceWith(this._renderFooter());
     },
     /**
-     * Update the column total.
+     * Update the toal column
      */
     _refreshRowTotals: function () {
       var self = this;
