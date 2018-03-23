@@ -11,6 +11,7 @@
         'web_widget_x2many_2d_matrix',
     ],
     "data": [
+        'demo/x2m.demo.csv',
         'views/x2m_demo.xml',
         'wizard/x2m_matrix.xml',
     ],

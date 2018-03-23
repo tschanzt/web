@@ -72,7 +72,7 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
       return $body;
     },
     /**
-     * Render the table hed of our matrix. Looks for the first table head 
+     * Render the table head of our matrix. Looks for the first table head 
      * and inserts the header into it.
      *
      * @private
@@ -383,19 +383,19 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
       });
     },
     /**
-     * Update the total row.
+     * Update the row total.
      */
     _refreshColTotals: function () {
       this._computeColumnAggregates();
       this.$('tfoot').replaceWith(this._renderFooter());
     },
     /**
-     * Update the toal column
+     * Update the column total.
      */
     _refreshRowTotals: function () {
       var self = this;
       this._computeRowAggregates();
-      var $rows = $('.o_field_x2many_2d_matrix tr.o_data_row');
+      var $rows = self.$el.find('tr.o_data_row');
       _.each(self.rows, function(row, i) {
         if (row.aggregate) {
           $($rows[i]).find('.row-total')
