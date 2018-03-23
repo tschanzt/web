@@ -160,6 +160,13 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
       }
       return $tr;
     },
+    /**
+     * Renders the label for a specific row.
+     *
+     * @private
+     * @params {Object} record: Contains the information about the record.
+     * @params {jQueryElement} the cell that was rendered.
+     */
     _renderLabelCell: function(record) {
       var $td = $('<td>');
       var value = record.data[this.matrix_data.field_y_axis];
