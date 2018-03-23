@@ -395,7 +395,7 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
     _refreshRowTotals: function () {
       var self = this;
       this._computeRowAggregates();
-      var $rows = self.$el.find('tr.o_data_row');
+      var $rows = $('.o_field_x2many_2d_matrix tr.o_data_row');
       _.each(self.rows, function(row, i) {
         if (row.aggregate) {
           $($rows[i]).find('.row-total')
